@@ -1,0 +1,89 @@
+# ═══════════════════════════════════════════════════════════════
+# docker-compose — Calendrier CDM 2026
+# Stack : PostgreSQL + MongoDB + Backend Spring Boot + Frontend React
+# Lancement : docker-compose up
+# ═══════════════════════════════════════════════════════════════
+
+services:
+
+  # ─────────────────────────────────────────────────────────────
+  # PostgreSQL
+  # ─────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: wc2026_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: worldcup2026
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d worldcup2026"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - wc2026_network
+
+  # ─────────────────────────────────────────────────────────────
+  # MongoDB
+  # ─────────────────────────────────────────────────────────────
+  mongodb:
+    image: mongo:7
+    container_name: wc2026_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - wc2026_network
+
+  # ─────────────────────────────────────────────────────────────
+  # Backend Spring Boot
+  # ─────────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: calendrier-service:latest
+    container_name: wc2026_backend
+    restart: on-failure
+    ports:
+      - "8081:8081"
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: worldcup2026
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      MONGO_HOST: mongodb
+      MONGO_PORT: 27017
+      MONGO_DB: worldcup2026_live
+      WC2026_API_KEY: ${WC2026_API_KEY}
+      FRONTEND_ORIGINS: http://localhost,http://localhost:80
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+    networks:
+      - wc2026_network
+
+# ─────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+  mongo_data:
+
+networks:
+  wc2026_network:
+    driver: bridge
