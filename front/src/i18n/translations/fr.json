@@ -1,0 +1,146 @@
+{
+  "common": {
+    "appName": "Maroc 2030",
+    "welcome": "Bienvenue",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "save": "Enregistrer",
+    "close": "Fermer",
+    "back": "Retour",
+    "hello": "Bonjour,",
+    "call": "Appeler"
+  },
+  "tabs": {
+    "home": "Accueil",
+    "favorites": "Favoris",
+    "reservations": "Réservations",
+    "profile": "Profil"
+  },
+  "home": {
+    "title": "Découvrez le Maroc",
+    "subtitle": "Coupe du Monde FIFA 2030",
+    "hostCities": "Les Villes Hôtes",
+    "upcomingMatches": "Matchs à venir",
+    "viewAll": "View all",
+    "myCalendar": "Mon Calendrier",
+    "services": "Services",
+    "discover": "Découvrir",
+    "welcome": "Bienvenue au Maroc",
+    "welcomeDesc": "Découvrez les 6 villes hôtes de la Coupe du Monde 2030. Une expérience inoubliable vous attend."
+  },
+  "calendar": {
+    "myCalendar": "Mon Calendrier",
+    "june2025": "Juin 2025",
+    "legend": {
+      "matches": "Matchs",
+      "hotels": "Hôtels",
+      "restaurants": "Restaurants",
+      "activities": "Activités"
+    },
+    "days": {
+      "sunday": "D",
+      "monday": "L",
+      "tuesday": "M",
+      "wednesday": "M",
+      "thursday": "J",
+      "friday": "V",
+      "saturday": "S"
+    },
+    "eventTypes": {
+      "match": "Match",
+      "hotel": "Hôtel",
+      "restaurant": "Restaurant",
+      "activity": "Activité"
+    }
+  },
+  "services": {
+    "hotels": "Hôtels",
+    "restaurants": "Restaurants",
+    "activities": "Activités",
+    "map": "Carte"
+  },
+  "cities": {
+    "casablanca": "Casablanca",
+    "rabat": "Rabat",
+    "marrakech": "Marrakech",
+    "agadir": "Agadir",
+    "tanger": "Tanger",
+    "fes": "Fès"
+  },
+  "stadium": {
+    "grandStade": "Grand Stade",
+    "complexeSportif": "Complexe Sportif",
+    "stadeAdrar": "Stade Adrar",
+    "ibnBatouta": "Ibn Batouta",
+    "stadeDeFes": "Stade de Fès",
+    "places": "places"
+  },
+  "cityDetail": {
+    "discover": "Découvrez",
+    "stadium": "Stade",
+    "capacity": "places",
+    "dontMiss": "À ne pas manquer",
+    "gallery": "Galerie Photos",
+    "viewHotels": "Voir les hôtels",
+    "restaurants": "Restaurants",
+    "casablancaDesc": "Capitale économique du Maroc, Casablanca est une métropole moderne qui marie traditions et modernité. La majestueuse Mosquée Hassan II, construite au bord de l'océan, est l'un des monuments les plus emblématiques du pays.",
+    "rabatDesc": "Capitale politique et administrative du Maroc, Rabat est une ville élégante qui offre un mélange harmonieux d'histoire et de modernité. Classée au patrimoine mondial de l'UNESCO.",
+    "marrakechDesc": "La Perle du Sud, Marrakech enchante par ses couleurs ocres, ses souks animés et ses jardins luxuriants. La place Jemaa el-Fna est le cœur battant de cette ville impériale inscrite au patrimoine de l'UNESCO.",
+    "agadirDesc": "Station balnéaire moderne sur la côte atlantique, Agadir séduit par ses plages de sable fin, son climat ensoleillé toute l'année et sa marina animée. C'est la destination idéale pour combiner football et détente.",
+    "tangerDesc": "Porte de l'Afrique sur le détroit de Gibraltar, Tanger est une ville cosmopolite qui a inspiré de nombreux artistes. Entre Méditerranée et Atlantique, elle offre une atmosphère unique.",
+    "fesDesc": "Capitale spirituelle et culturelle du Maroc, Fès abrite la plus ancienne université du monde. Sa médina médiévale, classée au patrimoine mondial, est un labyrinthe fascinant de ruelles et de souks."
+  },
+  "hotels": {
+    "title": "Hôtels",
+    "available": "hôtels disponibles",
+    "fromPrice": "À partir de",
+    "perNight": "/nuit",
+    "bookNow": "Réserver maintenant",
+    "distance": "du stade",
+    "noHotels": "Aucun hôtel disponible"
+  },
+  "restaurants": {
+    "title": "Restaurants",
+    "available": "restaurants disponibles",
+    "cuisine": "Cuisine",
+    "priceRange": "Gamme de prix",
+    "openNow": "Ouvert maintenant",
+    "viewMenu": "Voir le menu",
+    "noRestaurants": "Aucun restaurant disponible"
+  },
+  "profile": {
+    "title": "Mon Profil",
+    "editProfile": "Modifier le profil",
+    "account": "Mon Compte",
+    "info": "Informations",
+    "security": "Sécurité",
+    "changePassword": "Changer mot de passe",
+    "darkMode": "Mode sombre",
+    "personalInfo": "Informations personnelles",
+    "payment": "Moyens de paiement",
+    "language": "Langue",
+    "notifications": "Notifications",
+    "logout": "Déconnexion"
+  },
+  "reservations": {
+    "myReservations": "Mes Réservations",
+    "noReservations": "Aucune réservation"
+  },
+  "booking": {
+    "title": "Réservation",
+    "personalInfo": "Informations personnelles",
+    "fullName": "Nom complet",
+    "bookingDetails": "Détails de la réservation",
+    "confirmBooking": "Confirmer la réservation"
+  },
+  "language": {
+    "selectLanguage": "Choisir la langue",
+    "french": "Français",
+    "english": "Anglais",
+    "arabic": "العربية",
+    "spanish": "Español"
+  }
+}
