@@ -1,0 +1,51 @@
+# ===================================================================
+# DOCKER-COMPOSE - 2 services : MySQL + Backend Spring Boot
+# ===================================================================
+services:
+
+  # --- Base de donnees MySQL ---
+  db:
+    image: mysql:8.0
+    container_name: auth_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: auth_db
+    ports:
+      - "3307:3306"   # Port externe 3307 pour eviter conflit avec XAMPP local
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # --- Backend Spring Boot ---
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: auth_backend
+    restart: always
+    environment:
+      DB_HOST: db          # nom du service MySQL ci-dessus
+      DB_NAME: auth_db
+      DB_USER: root
+      DB_PASSWORD: root
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  db_data:
