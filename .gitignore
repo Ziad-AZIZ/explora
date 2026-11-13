@@ -1,0 +1,50 @@
+# ---------- Secrets ----------
+.env
+.env.*
+!.env.example
+**/firebase-service-account.json
+**/serviceAccountKey.json
+**/*.pem
+**/*.jks
+**/*.p12
+
+# ---------- Java / Maven ----------
+**/target/
+*.class
+*.jar
+*.war
+*.log
+*.iml
+
+# ---------- Node / Expo ----------
+node_modules/
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+.metro-health-check*
+npm-debug.log*
+yarn-error.log*
+/front/ios
+/front/android
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.pytest_cache/
+
+# ---------- Données volumineuses ----------
+*.sql.gz
+**/maroc2030_backup_*.sql
+
+# ---------- IDE / OS ----------
+.idea/
+.vscode/
+.settings/
+.classpath
+.project
+.DS_Store
+Thumbs.db
+*.swp
