@@ -1,0 +1,197 @@
+{
+  "common": {
+    "appName": "Marruecos 2030",
+    "welcome": "Bienvenido",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "close": "Cerrar",
+    "back": "Volver",
+    "hello": "¡Hola!"
+  },
+  "tabs": {
+    "home": "Inicio",
+    "favorites": "Favoritos",
+    "reservations": "Reservas",
+    "profile": "Perfil"
+  },
+  "home": {
+    "title": "Descubre Marruecos",
+    "subtitle": "Copa Mundial FIFA 2030",
+    "hostCities": "Ciudades Anfitrionas",
+    "upcomingMatches": "Próximos Partidos",
+    "viewAll": "Ver todo",
+    "myCalendar": "Mi Calendario",
+    "services": "Servicios",
+    "discover": "Descubrir",
+    "welcome": "Bienvenido a Marruecos",
+    "welcomeDesc": "Descubre las 6 ciudades anfitrionas de la Copa Mundial 2030. Una experiencia inolvidable te espera."
+  },
+  "calendar": {
+    "myCalendar": "Mi Calendario",
+    "june2025": "Junio 2025",
+    "viewAll": "Ver todo",
+    "legend": {
+      "matches": "Partidos",
+      "hotels": "Hoteles",
+      "restaurants": "Restaurantes",
+      "activities": "Actividades"
+    },
+    "days": {
+      "sunday": "D",
+      "monday": "L",
+      "tuesday": "M",
+      "wednesday": "X",
+      "thursday": "J",
+      "friday": "V",
+      "saturday": "S"
+    },
+    "months": {
+      "january": "Enero",
+      "february": "Febrero",
+      "march": "Marzo",
+      "april": "Abril",
+      "may": "Mayo",
+      "june": "Junio",
+      "july": "Julio",
+      "august": "Agosto",
+      "september": "Septiembre",
+      "october": "Octubre",
+      "november": "Noviembre",
+      "december": "Diciembre"
+    },
+    "eventTypes": {
+      "match": "Partido",
+      "hotel": "Hotel",
+      "restaurant": "Restaurante",
+      "activity": "Actividad"
+    }
+  },
+  "services": {
+    "hotels": "Hoteles",
+    "restaurants": "Restaurantes",
+    "activities": "Actividades",
+    "map": "Mapa"
+  },
+  "cities": {
+    "casablanca": "Casablanca",
+    "rabat": "Rabat",
+    "marrakech": "Marrakech",
+    "agadir": "Agadir",
+    "tanger": "Tánger",
+    "fes": "Fez"
+  },
+  "stadium": {
+    "grandStade": "Gran Estadio",
+    "grandStadeCasablanca": "Gran Estadio de Casablanca",
+    "complexeSportif": "Complejo Deportivo",
+    "complexeSportifMoulayAbdellah": "Complejo Deportivo Moulay Abdellah",
+    "grandStadeMarrakech": "Gran Estadio de Marrakech",
+    "stadeAdrar": "Estadio Adrar",
+    "ibnBatouta": "Ibn Batouta",
+    "stadeIbnBatouta": "Estadio Ibn Batouta",
+    "stadeDeFes": "Estadio de Fez",
+    "places": "asientos",
+    "capacity115k": "115,000 asientos",
+    "capacity46k": "46,000 asientos"
+  },
+  "facts": {
+    "casablanca": "Ciudad más grande de Marruecos con 3.7 millones de habitantes",
+    "rabat": "Capital de Marruecos desde 1912",
+    "marrakech": "Fundada en 1062 por los almorávides",
+    "agadir": "300 días de sol al año",
+    "tanger": "A solo 14 km de Europa",
+    "fes": "Mayor medina medieval del mundo"
+  },
+  "cityDetail": {
+    "discover": "Descubre",
+    "stadium": "Estadio",
+    "capacity": "asientos",
+    "dontMiss": "No te pierdas",
+    "gallery": "Galería de Fotos",
+    "viewHotels": "Ver hoteles",
+    "restaurants": "Restaurantes",
+    "casablancaDesc": "Capital económica de Marruecos, Casablanca es una metrópolis moderna que combina tradición y modernidad. La majestuosa Mezquita Hassan II, construida junto al océano, es uno de los monumentos más emblemáticos del país.",
+    "rabatDesc": "Capital política y administrativa de Marruecos, Rabat es una ciudad elegante que ofrece una mezcla armoniosa de historia y modernidad. Patrimonio Mundial de la UNESCO.",
+    "marrakechDesc": "La Perla del Sur, Marrakech encanta con sus colores ocres, sus zocos animados y sus jardines exuberantes. La plaza Jemaa el-Fna es el corazón palpitante de esta ciudad imperial inscrita en el patrimonio de la UNESCO.",
+    "agadirDesc": "Moderno balneario de la costa atlántica, Agadir atrae con sus playas de arena fina, su clima soleado todo el año y su animado puerto deportivo. Es el destino ideal para combinar fútbol y relajación.",
+    "tangerDesc": "Puerta de África en el Estrecho de Gibraltar, Tánger es una ciudad cosmopolita que ha inspirado a muchos artistas. Entre el Mediterráneo y el Atlántico, ofrece una atmósfera única.",
+    "fesDesc": "Capital espiritual y cultural de Marruecos, Fez alberga la universidad más antigua del mundo. Su medina medieval, patrimonio mundial, es un fascinante laberinto de callejuelas y zocos."
+  },
+  "highlights": {
+    "casablanca": {
+      "mosque": "Mezquita Hassan II - Obra maestra arquitectónica",
+      "corniche": "Corniche d'Ain Diab - Paseo marítimo",
+      "mall": "Morocco Mall - Mayor centro comercial de África",
+      "habous": "Barrio de Habous - Arquitectura tradicional"
+    },
+    "rabat": {
+      "kasbah": "Kasbah de los Udayas - Fortaleza histórica",
+      "tour": "Torre Hassan - Monumento emblemático",
+      "chellah": "Chellah - Sitio arqueológico fascinante",
+      "medina": "Medina de Rabat - Encanto auténtico"
+    },
+    "marrakech": {
+      "jemaa": "Plaza Jemaa el-Fna - Corazón de la medina",
+      "majorelle": "Jardín Majorelle - Oasis de tranquilidad",
+      "bahia": "Palacio de la Bahía - Arquitectura suntuosa",
+      "souks": "Zocos de Marrakech - Compras tradicionales"
+    },
+    "agadir": {
+      "beach": "Playa de Agadir - 10 km de arena fina",
+      "kasbah": "Kasbah de Agadir Oufella - Vista panorámica",
+      "park": "Parque Souss-Massa - Reserva natural",
+      "marina": "Marina de Agadir - Ambiente moderno"
+    },
+    "tanger": {
+      "cap": "Cabo Espartel - Punto de encuentro de los océanos",
+      "grottes": "Cuevas de Hércules - Sitio mitológico",
+      "medina": "Medina de Tánger - Encanto histórico",
+      "kasbah": "Museo de la Kasbah - Arte e historia"
+    },
+    "fes": {
+      "medina": "Medina de Fez el-Bali - UNESCO",
+      "university": "Universidad Al Quaraouiyine - Fundada en 859",
+      "tanneries": "Curtidurías Chouara - Artesanía tradicional",
+      "palace": "Palacio Real - Arquitectura majestuosa"
+    }
+  },
+  "hotels": {
+    "title": "Hoteles",
+    "available": "hoteles disponibles",
+    "fromPrice": "Desde",
+    "perNight": "/noche",
+    "bookNow": "Reservar ahora",
+    "distance": "del estadio",
+    "noHotels": "No hay hoteles disponibles"
+  },
+  "restaurants": {
+    "title": "Restaurantes",
+    "available": "restaurantes disponibles",
+    "cuisine": "Cocina",
+    "priceRange": "Rango de precios",
+    "openNow": "Abierto ahora",
+    "viewMenu": "Ver menú",
+    "noRestaurants": "No hay restaurantes disponibles"
+  },
+  "profile": {
+    "title": "Mi Perfil",
+    "editProfile": "Editar perfil",
+    "personalInfo": "Información personal",
+    "security": "Seguridad y contraseña",
+    "payment": "Métodos de pago",
+    "language": "Idioma",
+    "notifications": "Notificaciones",
+    "logout": "Cerrar sesión"
+  },
+  "language": {
+    "selectLanguage": "Seleccionar idioma",
+    "french": "Français",
+    "english": "English",
+    "arabic": "العربية",
+    "spanish": "Español"
+  }
+}

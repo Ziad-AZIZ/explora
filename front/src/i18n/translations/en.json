@@ -1,0 +1,213 @@
+{
+  "common": {
+    "appName": "Morocco 2030",
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "close": "Close",
+    "back": "Back",
+    "hello": "Hello,",
+    "call": "Call"
+  },
+  "tabs": {
+    "home": "Home",
+    "favorites": "Favorites",
+    "reservations": "Reservations",
+    "profile": "Profile"
+  },
+  "home": {
+    "title": "Discover Morocco",
+    "subtitle": "FIFA World Cup 2030",
+    "hostCities": "Host Cities",
+    "upcomingMatches": "Upcoming Matches",
+    "viewAll": "View all",
+    "myCalendar": "My Calendar",
+    "services": "Services",
+    "discover": "Discover",
+    "welcome": "Welcome to Morocco",
+    "welcomeDesc": "Discover the 6 host cities of the 2030 World Cup. An unforgettable experience awaits you."
+  },
+  "calendar": {
+    "myCalendar": "My Calendar",
+    "june2025": "June 2025",
+    "viewAll": "View all",
+    "legend": {
+      "matches": "Matches",
+      "hotels": "Hotels",
+      "restaurants": "Restaurants",
+      "activities": "Activities"
+    },
+    "days": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "eventTypes": {
+      "match": "Match",
+      "hotel": "Hotel",
+      "restaurant": "Restaurant",
+      "activity": "Activity"
+    }
+  },
+  "services": {
+    "hotels": "Hotels",
+    "restaurants": "Restaurants",
+    "activities": "Activities",
+    "map": "Map"
+  },
+  "cities": {
+    "casablanca": "Casablanca",
+    "rabat": "Rabat",
+    "marrakech": "Marrakech",
+    "agadir": "Agadir",
+    "tanger": "Tangier",
+    "fes": "Fez"
+  },
+  "stadium": {
+    "grandStade": "Grand Stadium",
+    "grandStadeCasablanca": "Grand Stadium of Casablanca",
+    "complexeSportif": "Sports Complex",
+    "complexeSportifMoulayAbdellah": "Moulay Abdellah Sports Complex",
+    "grandStadeMarrakech": "Grand Stadium of Marrakech",
+    "stadeAdrar": "Adrar Stadium",
+    "ibnBatouta": "Ibn Batouta",
+    "stadeIbnBatouta": "Ibn Batouta Stadium",
+    "stadeDeFes": "Stadium of Fez",
+    "places": "seats",
+    "capacity115k": "115,000 seats",
+    "capacity46k": "46,000 seats"
+  },
+  "facts": {
+    "casablanca": "Largest city in Morocco with 3.7 million inhabitants",
+    "rabat": "Capital of Morocco since 1912",
+    "marrakech": "Founded in 1062 by the Almoravids",
+    "agadir": "300 days of sunshine per year",
+    "tanger": "Only 14 km from Europe",
+    "fes": "Largest medieval medina in the world"
+  },
+  "cityDetail": {
+    "discover": "Discover",
+    "stadium": "Stadium",
+    "capacity": "seats",
+    "dontMiss": "Don't miss",
+    "gallery": "Photo Gallery",
+    "viewHotels": "View hotels",
+    "restaurants": "Restaurants",
+    "casablancaDesc": "Morocco's economic capital, Casablanca is a modern metropolis that blends tradition and modernity. The majestic Hassan II Mosque, built by the ocean, is one of the country's most iconic monuments.",
+    "rabatDesc": "Morocco's political and administrative capital, Rabat is an elegant city offering a harmonious blend of history and modernity. UNESCO World Heritage Site.",
+    "marrakechDesc": "The Pearl of the South, Marrakech enchants with its ochre colors, bustling souks and lush gardens. Jemaa el-Fna square is the beating heart of this imperial city listed as a UNESCO heritage site.",
+    "agadirDesc": "A modern seaside resort on the Atlantic coast, Agadir attracts with its fine sandy beaches, year-round sunny climate and lively marina. It's the ideal destination to combine football and relaxation.",
+    "tangerDesc": "Gateway to Africa on the Strait of Gibraltar, Tangier is a cosmopolitan city that has inspired many artists. Between Mediterranean and Atlantic, it offers a unique atmosphere.",
+    "fesDesc": "Morocco's spiritual and cultural capital, Fez is home to the world's oldest university. Its medieval medina, a world heritage site, is a fascinating labyrinth of alleys and souks."
+  },
+  "highlights": {
+    "casablanca": {
+      "mosque": "Hassan II Mosque - Architectural masterpiece",
+      "corniche": "Ain Diab Corniche - Seafront promenade",
+      "mall": "Morocco Mall - Largest shopping mall in Africa",
+      "habous": "Habous Quarter - Traditional architecture"
+    },
+    "rabat": {
+      "kasbah": "Kasbah of the Udayas - Historic fortress",
+      "tour": "Hassan Tower - Iconic monument",
+      "chellah": "Chellah - Fascinating archaeological site",
+      "medina": "Rabat Medina - Authentic charm"
+    },
+    "marrakech": {
+      "jemaa": "Jemaa el-Fna Square - Heart of the medina",
+      "majorelle": "Majorelle Garden - Oasis of tranquility",
+      "bahia": "Bahia Palace - Sumptuous architecture",
+      "souks": "Marrakech Souks - Traditional shopping"
+    },
+    "agadir": {
+      "beach": "Agadir Beach - 10 km of fine sand",
+      "kasbah": "Agadir Oufella Kasbah - Panoramic view",
+      "park": "Souss-Massa Park - Nature reserve",
+      "marina": "Agadir Marina - Modern atmosphere"
+    },
+    "tanger": {
+      "cap": "Cap Spartel - Meeting point of the oceans",
+      "grottes": "Caves of Hercules - Mythological site",
+      "medina": "Tangier Medina - Historic charm",
+      "kasbah": "Kasbah Museum - Art and history"
+    },
+    "fes": {
+      "medina": "Fes el-Bali Medina - UNESCO",
+      "university": "Al Quaraouiyine University - Founded in 859",
+      "tanneries": "Chouara Tanneries - Traditional crafts",
+      "palace": "Royal Palace - Majestic architecture"
+    }
+  },
+  "hotels": {
+    "title": "Hotels",
+    "available": "hotels available",
+    "fromPrice": "From",
+    "perNight": "/night",
+    "bookNow": "Book now",
+    "distance": "from stadium",
+    "noHotels": "No hotels available"
+  },
+  "restaurants": {
+    "title": "Restaurants",
+    "available": "restaurants available",
+    "cuisine": "Cuisine",
+    "priceRange": "Price range",
+    "openNow": "Open now",
+    "viewMenu": "View menu",
+    "noRestaurants": "No restaurants available"
+  },
+  "profile": {
+    "title": "My Profile",
+    "editProfile": "Edit profile",
+    "account": "My Account",
+    "info": "Information",
+    "security": "Security",
+    "changePassword": "Change Password",
+    "darkMode": "Dark Mode",
+    "personalInfo": "Personal information",
+    "payment": "Payment methods",
+    "language": "Language",
+    "notifications": "Notifications",
+    "logout": "Logout"
+  },
+  "reservations": {
+    "myReservations": "My Reservations",
+    "noReservations": "No reservations found"
+  },
+  "booking": {
+    "title": "Booking",
+    "personalInfo": "Personal Information",
+    "fullName": "Full Name",
+    "bookingDetails": "Booking Details",
+    "confirmBooking": "Confirm Booking"
+  },
+  "language": {
+    "selectLanguage": "Select language",
+    "french": "Français",
+    "english": "English",
+    "arabic": "العربية",
+    "spanish": "Español"
+  }
+}

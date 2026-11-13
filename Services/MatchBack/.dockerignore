@@ -1,0 +1,6 @@
+target/
+.idea/
+*.md
+.env
+.env.example
+docker-compose.yml

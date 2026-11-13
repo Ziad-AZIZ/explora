@@ -1,0 +1,217 @@
+# ═══════════════════════════════════════════════════════════════
+# EXPLORA — orchestration complète (gateway + 6 services + bases)
+# Lancement : cp .env.example .env && docker compose up --build
+# ═══════════════════════════════════════════════════════════════
+services:
+
+  # ─────────────── API GATEWAY (point d'entrée unique) ───────────────
+  gateway:
+    build: ./Services/gateway
+    container_name: gateway-service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - auth
+      - backend
+      - reservation
+      - matchback
+      - notif
+    networks:
+      - app-network
+
+  # ─────────────── AUTH ───────────────
+  auth:
+    build: ./Services/Auth
+    container_name: auth-service
+    restart: always
+    environment:
+      DB_HOST: mysql-auth
+      DB_NAME: auth_db
+      DB_USER: root
+      DB_PASSWORD: ${AUTH_DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+    ports:
+      - "8086:8080"
+    depends_on:
+      mysql-auth:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  mysql-auth:
+    image: mysql:8.0
+    container_name: mysql-auth
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${AUTH_DB_PASSWORD}
+      MYSQL_DATABASE: auth_db
+    ports:
+      - "3309:3306"
+    volumes:
+      - auth-db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${AUTH_DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  # ─────────────── CATALOGUE (hôtels, restaurants, favoris, recherche) ───────────────
+  backend:
+    build: ./Services/back
+    container_name: catalog-service
+    ports:
+      - "5000:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/maroc2030db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ${CATALOG_DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      - mysql-db
+    networks:
+      - app-network
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${CATALOG_DB_PASSWORD}
+      MYSQL_DATABASE: maroc2030db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  # ─────────────── RÉSERVATION ───────────────
+  reservation:
+    build: ./Services/reservation
+    container_name: reservation-service
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-reservation:3306/reservation_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ${RESERVATION_DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      - mysql-reservation
+    networks:
+      - app-network
+
+  mysql-reservation:
+    image: mysql:8.0
+    container_name: mysql-reservation
+    environment:
+      MYSQL_ROOT_PASSWORD: ${RESERVATION_DB_PASSWORD}
+      MYSQL_DATABASE: reservation_db
+    ports:
+      - "3308:3306"
+    volumes:
+      - reservation-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  # ─────────────── NOTIFICATIONS (push, e-mails, rappels) ───────────────
+  notif:
+    build: ./Services/Notif
+    container_name: notif-service
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-reservation:3306/explora_notifications?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ${RESERVATION_DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      - mysql-reservation
+    networks:
+      - app-network
+
+  # ─────────────── CALENDRIER CDM 2026 (matchs, équipes, classements) ───────────────
+  matchback:
+    build: ./Services/MatchBack
+    container_name: matchback-service
+    restart: on-failure
+    ports:
+      - "8085:8081"
+    environment:
+      POSTGRES_HOST: postgres-matchback
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: worldcup2026
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      MONGO_HOST: mongo-matchback
+      MONGO_PORT: 27017
+      MONGO_DB: worldcup2026_live
+      WC2026_API_KEY: ${WC2026_API_KEY}
+      FRONTEND_ORIGINS: http://localhost,http://localhost:80
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      postgres-matchback:
+        condition: service_healthy
+      mongo-matchback:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  postgres-matchback:
+    image: postgres:16-alpine
+    container_name: postgres-matchback
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: worldcup2026
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d worldcup2026"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  mongo-matchback:
+    image: mongo:7
+    container_name: mongo-matchback
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  # ─────────────── CHATBOT (FastAPI + Groq + modèle ML hôtels) ───────────────
+  chatbot:
+    build: ./Services/chatbot
+    container_name: chatbot-service
+    ports:
+      - "5001:5000"
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY}
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  auth-db-data:
+  mysql-data:
+  reservation-data:
+  postgres_data:
+  mongo_data:

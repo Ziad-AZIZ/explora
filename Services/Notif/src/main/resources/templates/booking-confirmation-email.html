@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation réservation</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px;">
+
+<div style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+
+    <div style="background-color: #006233; padding: 30px; text-align: center;">
+        <h1 style="color: white; margin: 0;">✅ Réservation confirmée</h1>
+    </div>
+
+    <div style="padding: 30px;">
+        <h2 style="color: #333;">Salut <span th:text="${userName}">User</span> !</h2>
+
+        <p style="color: #555; font-size: 16px; line-height: 1.6;">
+            Ta réservation à <strong th:text="${hotelName}">Hotel</strong> est confirmée.
+            Voici les détails :
+        </p>
+
+        <!-- Carte récap -->
+        <div style="background-color: #f9f9f9; border-left: 4px solid #006233; padding: 20px; margin: 20px 0; border-radius: 5px;">
+            <p style="margin: 8px 0; color: #333;">
+                🏨 <strong>Hôtel :</strong> <span th:text="${hotelName}">Hotel</span>
+            </p>
+            <p style="margin: 8px 0; color: #333;">
+                📅 <strong>Check-in :</strong> <span th:text="${checkInDate}">date</span>
+            </p>
+            <p style="margin: 8px 0; color: #333;">
+                📅 <strong>Check-out :</strong> <span th:text="${checkOutDate}">date</span>
+            </p>
+            <p style="margin: 8px 0; color: #333;">
+                🎫 <strong>N° de réservation :</strong> <span th:text="${bookingId}" style="font-family: monospace;">ID</span>
+            </p>
+        </div>
+
+        <p style="color: #555; font-size: 16px; line-height: 1.6;">
+            Présente cet email (ou la confirmation dans l'app) à ton arrivée.
+        </p>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://explora.ma/bookings" style="background-color: #006233; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                Voir mes réservations
+            </a>
+        </div>
+
+        <p style="color: #888; font-size: 14px; text-align: center; margin-top: 30px;">
+            Bon séjour au Maroc ! 🌟
+        </p>
+    </div>
+
+    <div style="background-color: #f4f4f4; padding: 20px; text-align: center; color: #888; font-size: 12px;">
+        <p>© 2026 Explora Maroc | Une question ? support@explora.ma</p>
+    </div>
+</div>
+
+</body>
+</html>

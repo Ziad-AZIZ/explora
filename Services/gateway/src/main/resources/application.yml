@@ -1,0 +1,65 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+      routes:
+        # ==================================
+        # 🔐 AUTH SERVICE ROUTES
+        # ==================================
+        - id: auth-service
+          uri: http://auth:8080
+          predicates:
+            - Path=/api/auth/**
+
+        # ==================================
+        # 📅 RESERVATION SERVICE ROUTES
+        # ==================================
+        - id: reservation-service
+          uri: http://reservation:8080
+          predicates:
+            - Path=/api/reservations/**
+
+        # ==================================
+        # ⚽ MATCHBACK SERVICE ROUTES
+        # ==================================
+        - id: matchback-service
+          uri: http://matchback:8081
+          predicates:
+            - Path=/api/wc2026/**
+
+        # ==================================
+        # 🔔 NOTIFICATION SERVICE ROUTES
+        # ==================================
+        - id: notif-service
+          uri: http://notif:8084
+          predicates:
+            - Path=/api/notifications/**
+
+        # ==================================
+        # 🏛️ MONOLITH BACKEND ROUTES
+        # ==================================
+        - id: monolith-backend
+          uri: http://backend:8081
+          predicates:
+            - Path=/api/users/**, /api/hotels/**, /api/restaurants/**, /api/favorites/**, /api/search/**
+
+# Logging Configuration
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
